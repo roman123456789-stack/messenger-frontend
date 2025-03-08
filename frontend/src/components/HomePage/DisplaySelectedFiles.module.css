@@ -1,0 +1,171 @@
+*{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.modal-overlay{
+    background-color: rgba(1, 1, 1, 0.7);
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0%;
+    left: 0%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 998;
+}
+.container-files{
+    width:350px;
+    height: 300px;
+    border-radius: 15px;
+    padding: 15px;
+    overflow-y: hidden;
+    background-color: #fff;
+    position: absolute;
+    z-index: 999;
+}
+.container-files .common-wrapper-images{
+    width: 100%;
+    height: 70%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    border-radius: 15px;
+    overflow-y: scroll;
+    padding-bottom: 10px;
+}
+.container-files .common-wrapper-images .wrapper-image{
+    display: flex;
+    width: 140px;
+    height: 140px;
+    border-radius: 15px;
+    margin: 5px;
+    position: relative;
+}
+.container-files .common-wrapper-images .wrapper-image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+}
+.label-sendfiles {
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  height: 40px; 
+  padding-left: 20px; 
+}
+
+.label-sendfiles svg {
+  left: 0px; 
+  width: 30px; 
+  height: 30px;
+}
+.label-sendfiles svg:hover {
+  border-radius: 50%;
+  cursor: pointer;
+  background-color: rgba(1, 1, 1, 0.3);
+  
+}
+.label-sendfiles span {
+  flex-grow: 1;
+  margin-left: 17%;
+  font-weight: 500;
+  font-size: 19px;
+  color: #a8a5a5;
+  display: flex;
+}
+.common-wrapper-images .wrapper-image label{
+    right: 5%;
+    top: 5%;
+    display: flex;
+    cursor: pointer;
+    position: absolute;
+    background-color: rgba(1, 1, 1, 0.3);
+    border-radius: 50%;
+}
+.common-wrapper-images .wrapper-image label svg{
+    fill: #fff;
+}
+.common-wrapper-images .wrapper-image label svg:hover{
+    fill: red;
+    transition: 0.5s;
+}
+.sendfiles-footer{
+    height: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+.sendfiles-footer-button{
+    border-radius: 10px;
+    color: #fff;
+    background-color: blueviolet;
+    font-weight: 500;
+    width: 80px;
+    height: 40px;
+    outline: none;
+    border: none;
+    margin-right: 9%;
+    cursor: pointer;
+}
+.container-files .common-wrapper-documents{
+    width: 100%;
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 15px;
+    overflow-y: scroll;
+    padding-bottom: 10px;
+}
+
+.container-files .common-wrapper-documents .wrapper-document{
+    display: grid;
+    width: 100%;
+    height: 60px;
+    border-radius: 15px;
+    margin: 5px;
+    position: relative;
+    grid-template-columns: 0.5fr 2fr 0.5fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas: 
+        "image filename delete"
+        "image filetype delete"
+        "image filesize delete";
+}
+.document-image{
+    grid-area: image;
+}
+.filename{
+    grid-area: filename;
+}
+.filesize{
+    grid-area: filesize;
+}
+.filetype{
+    grid-area: filetype;
+}
+.container-files .common-wrapper-documents .wrapper-document label{
+    grid-area: delete;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.filename, .filesize, .filetype{
+    font-weight: 500;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+}
+.common-wrapper-documents .wrapper-document label svg{
+    fill: #a8a5a5;
+    display: flex;
+    width: 40px;
+    height: 40px;
+    align-items: center;
+    justify-content: center;
+}
+.common-wrapper-documents .wrapper-document label svg:hover{
+    fill: red;
+    transition: 0.5s;
+}

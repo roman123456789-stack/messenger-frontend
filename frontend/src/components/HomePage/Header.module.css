@@ -1,0 +1,84 @@
+.container-header{
+    display: grid;
+    height: 100%;
+    grid-template-columns: 0.4fr 3.3fr 0.2fr 0.2fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: "image username call search"
+                         "image last-visit call search";
+}
+.header-user-image-div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    grid-area: image;
+}
+.header-username{
+    font-weight: 900;
+    display: flex;
+    align-items: end;
+    grid-area: username;
+    padding-left: 10px;
+} 
+.header-last-visit{
+    grid-area: last-visit;
+    color: #a8a5a5;
+    padding-left: 10px;
+} 
+.header-call{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    grid-area: call;
+}
+.header-call-item:hover{
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    padding: 5px;
+    transition: 0.3s;
+} 
+.header-search{
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    grid-area: search;
+}
+.header-search-item:hover{
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    padding: 5px;
+    transition: 0.3s;
+}
+.header-search-button, .header-call-button{
+    cursor: pointer;
+    background-color: transparent;
+}
+.header-user-image{
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+    object-fit: cover;
+}
+.header-back-button{
+    display: none;
+}
+@media(max-width: 780px){
+    .header-back-button{
+        display: flex;
+        grid-area: back;
+        background-color: transparent;
+        cursor: pointer;
+        align-items: center;
+        justify-content: center;
+    }
+    .container-header{
+        grid-template-columns: 0.5fr 0.4fr 2.5fr 0.3fr 0.3fr;
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas: "back image username call search"
+                             "back image last-visit call search";
+    }
+    .header-user-image{
+        width: 50px;
+        height: 50px;
+    }
+}

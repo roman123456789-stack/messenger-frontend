@@ -1,0 +1,182 @@
+.container-profile{
+    width: 50%;
+    height: 50%;
+}
+.carousel-item{
+    width: 100%;
+    height: 100%;
+}
+.carousel-inner{
+    width: 100%;
+    height: 400px;
+}
+.carousel-item img {
+    width: 100%;
+    height: 100%;
+}
+.user-initials{
+    position: absolute;
+    bottom: 10%;
+    left: 10%;
+    font-weight: 700;
+    color: #fff;
+    font-size: 20px;
+}
+.user-last-time{
+    position: absolute;
+    bottom: 4%;
+    left: 10%;
+    color: #fff;
+    font-weight: 500;
+}
+#customCarousel{
+    position: relative;
+}
+.carousel-indicators{
+    position: absolute;
+    top: 3%;
+    height: 30px;
+}
+.container-common-information{
+    display: flex;
+    flex-direction: column;
+}
+.uer-bio{
+    height: 100px;
+}
+
+
+/* Общий контейнер для карусели */
+.user-images {
+    position: relative;
+    width: 100%;
+    height: 400px; /* Высота карусели */
+    overflow: hidden;
+}
+
+/* Контейнер для слайдов */
+.carousel-inner {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+/* Слайды внутри карусели */
+.carousel-item {
+    min-width: 100%;
+    height: 100%;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Индикаторы (точки) */
+.carousel-indicators {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    display: flex;
+    gap: 8px;
+}
+
+.carousel-indicators button{
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    width: 25px;
+    height: 2.2px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.carousel-indicators button.active {
+    background-color: #fff;
+}
+
+/* Кнопки управления (стрелки) */
+.carousel-control-prev,
+.carousel-control-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: transparent;
+    color: white;
+    height: 70%;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 10;
+    transition: background-color 0.3s;
+}
+
+.carousel-control-prev {
+    left: 10px;
+}
+
+.carousel-control-next {
+    right: 10px;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+.carousel-control-prev-icon {
+    background-image: url('data:image/svg+xml;charset=utf8,%3Csvg xmlns="http://www.w3.org/2000/svg" fill="%23fff" viewBox="0 0 8 8"%3E%3Cpath d="M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z"/%3E%3C/svg%3E');
+}
+
+.carousel-control-next-icon {
+    background-image: url('data:image/svg+xml;charset=utf8,%3Csvg xmlns="http://www.w3.org/2000/svg" fill="%23fff" viewBox="0 0 8 8"%3E%3Cpath d="M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z"/%3E%3C/svg%3E');
+}
+.back-button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    cursor: pointer;
+    height: 50px;
+    width: 50px;
+    position: absolute;
+    top: 5%;
+    left: 3%;
+}
+.back-button:hover{
+    background-color: rgba(0, 0, 0, 0.1);
+    transition: 0.3s;
+    border-radius: 50%;
+}
+.label-nickname, .label-birthday, .label-bio{
+    color: rgba(0, 0, 0, 0.5);
+    font-weight: 500;
+}
+.wrapper-nickname, .wrapper-birthday, .wrapper-bio{
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 15px;
+    padding-left: 10px;
+    cursor: pointer;
+}
+.wrapper-bio{
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.wrapper-nickname:hover, .wrapper-birthday:hover, .wrapper-bio:hover{
+   background-color: aliceblue;
+}
+.user-birthday input{
+    background-color: transparent;
+    font-size: 16px;
+    color: black;
+}

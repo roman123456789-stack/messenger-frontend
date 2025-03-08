@@ -1,0 +1,244 @@
+ /* ОБЩИЕ ПАРАМЕТРЫ */
+ *{
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+body{
+    width: 100%;
+    height: 100vh;
+}
+
+#root{
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+}
+
+/* ОСНОВНОЙ КОНТЕЙНЕР ДЛЯ ВСЕГО СОДЕРЖИМОГО */
+.container {
+    background-image: url("../images/messages_background.webp");
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    display: grid; 
+    grid-template-columns: 0.8fr 1fr 1fr; 
+    grid-template-rows: 0.3fr 2.4fr 0.3fr; 
+    gap: 0px 0px; 
+    grid-template-areas: 
+        "search header header"
+        "dialogues main main"
+        "dialogues message message";
+}
+
+/* ШАПКА */
+.header { 
+    grid-area: header;
+    background-color: #fff;
+}
+
+
+/* СОДЕРЖИМОЕ ДИАЛОГА */
+.main { 
+    grid-area: main; 
+    background-image: url("../images/messages_background.webp");
+    background-repeat: repeat;
+    overflow-y: scroll;
+    padding-bottom: 10px;
+}
+
+/* ВВОД СООБЩЕНИЯ */
+.message { 
+    grid-area: message; 
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+}
+
+/* ПОИСК */
+.search { 
+    grid-area: search; 
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-search-users{
+    grid-area: search-users;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+}
+
+/* КОНТЕЙНЕР СО ВСЕМИ ДИАЛОГАМИ */
+.dialogues { 
+    grid-area: dialogues; 
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+}
+.container.show-search-users{
+    grid-template-areas: 
+    "search-users header header"
+    "search-users main main"
+    "search-users message message";
+}
+.container.show-menu{
+    grid-template-areas: 
+    "left-menu header header"
+    "left-menu main main"
+    "left-menu message message";
+}
+.container.show-profile{
+    grid-template-areas: 
+        "search profile profile"
+        "dialogues profile profile"
+        "dialogues profile profile";
+}
+.container.show-menu.show-profile{
+    grid-template-areas: 
+    "left-menu profile profile"
+    "left-menu profile profile"
+    "left-menu profile profile";
+}
+.container.show-search-users.show-profile{
+    grid-template-areas: 
+    "search-users profile profile"
+    "search-users profile profile"
+    "search-users profile profile";
+}
+.container-profile{
+    grid-area: profile;
+    background-color: #fff;
+}
+.container-show-self-profile{
+    grid-area: self-profile;
+    background-color: #fff;
+}
+.container.show-self-profile{
+    grid-template-areas: 
+    "self-profile header header"
+    "self-profile main main"
+    "self-profile message message";
+}
+.container.show-self-profile.show-profile{
+    grid-template-areas: 
+    "self-profile profile profile"
+    "self-profile profile profile"
+    "self-profile profile profile";
+}
+.container-left-menu{
+    grid-area: left-menu;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        15deg,
+    #fff 0%,
+    #f8f9ff 20%,
+    #f0f4ff 60%,
+    #e8edff 100%
+    );
+}
+/* АДАПТИВ */
+@media (max-width: 700px) {
+    .search-input {
+        height: 35px;
+    }
+
+    .container {
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.25fr 1.75fr;
+        grid-template-areas:
+            "search search"
+            "dialogues dialogues";
+    }
+
+    /* Скрываем все, кроме диалогов и поиска, по умолчанию */
+    .header,
+    .main,
+    .message {
+        display: none;
+    }
+
+    /* Класс для отображения только сообщений */
+    .container.show-messages {
+        grid-template-columns: 1fr 1fr; 
+        grid-template-rows: 0.25fr 2.45fr 0.3fr; 
+        grid-template-areas:
+            "header header"
+            "main main"
+            "message message";
+    }
+    .container.show-messages .header{
+        grid-area: header;
+        display: grid;
+    }
+    .container.show-messages .main{
+        grid-area: main;
+        display: flex;
+    }
+    .container.show-messages .message{
+        grid-area: message;
+        display: flex;
+    }
+
+    .container.show-messages .search,
+    .container.show-messages .dialogues {
+        display: none;
+    }
+    .container.show-profile{
+        grid-template-columns: 1fr; 
+        grid-template-rows: 1fr;
+        grid-template-areas: 
+            "profile";
+    }
+    .container.show-profile .search, 
+    .container.show-profile .dialogues{
+        display: none;
+    }    
+    .container.show-messages.show-menu{
+        grid-template-rows: 1fr;
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+        "left-menu"
+        "left-menu"
+        "left-menu";
+    }
+    .container.show-messages.show-menu .main, 
+    .container.show-messages.show-menu .header,
+    .container.show-messages.show-menu .message{
+        display: none;
+    }
+}
+@media (min-width: 700px){
+    .dialogue-name{
+        padding-left: 10px;
+    }
+    .dialogue-last-message{
+        padding-left: 10px;
+    }
+}
+@media(max-width: 500px){
+    .dialogue-name{
+        padding-left: 10px;
+    }
+    .dialogue-last-message{
+        padding-left: 10px;
+    }
+    .container-main{
+        width: 100% !important;
+    }
+    .main-recipient, .main-sender{
+        margin-left: 3% !important;
+        max-width: 80% !important;
+        padding: 4px !important;
+        border-radius: 15px;
+        margin-top: 5px !important;
+    }
+}

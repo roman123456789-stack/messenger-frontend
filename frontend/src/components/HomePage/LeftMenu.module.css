@@ -1,0 +1,46 @@
+.wrapper-left-menu{
+    display: flex;
+    flex-direction: column;
+}
+.wrapper-left-menu .profile:hover, .settings:hover, .share:hover, .logout:hover{
+    background-color: rgba(0, 0, 0, 0.1);
+    transition: 0.5s;
+}
+.wrapper-left-menu div svg{
+    padding-right: 15px;
+}
+.back-svg{
+    padding: 0px !important;
+}
+.wrapper-button{
+    height: 60px;
+}
+.share, .settings, .profile, .logout{
+    padding-left: 10px;
+    height: 30px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    border-radius: 15px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.search-menu-button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    cursor: pointer;
+    height: 50px;
+    width: 50px;
+}
+.search-menu-button:hover{
+    background-color: rgba(0, 0, 0, 0.1);
+    transition: 0.3s;
+    border-radius: 50%;
+}
+.logout{
+    color: #EA3323;
+    font-weight: 500;
+}
