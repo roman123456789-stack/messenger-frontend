@@ -9,9 +9,9 @@ function App() {
   return (
         <Router>  
         <Routes>
-          <Route path="/home" element={<Home />} />
-          <Route path="/" element={<Registration />} />
-          <Route path="/autorization" element={<Autorization />} />
+          <Route path="/messenger-frontend/home" element={<Home />} />
+          <Route path="/messenger-frontend/" element={<Registration />} />
+          <Route path="/messenger-frontend/autorization" element={<Autorization />} />
         </Routes>
       </Router>
     );
