@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/messenger-frontend/static/css/main.a74895ef.css",
+    "main.js": "/messenger-frontend/static/js/main.f3c5fa1f.js",
+    "static/js/488.e75445ad.chunk.js": "/messenger-frontend/static/js/488.e75445ad.chunk.js",
+    "static/media/messages_background.webp": "/messenger-frontend/static/media/messages_background.68422e1834d4702531c3.webp",
+    "index.html": "/messenger-frontend/index.html",
+    "main.a74895ef.css.map": "/messenger-frontend/static/css/main.a74895ef.css.map",
+    "main.f3c5fa1f.js.map": "/messenger-frontend/static/js/main.f3c5fa1f.js.map",
+    "488.e75445ad.chunk.js.map": "/messenger-frontend/static/js/488.e75445ad.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a74895ef.css",
+    "static/js/main.f3c5fa1f.js"
+  ]
+}
