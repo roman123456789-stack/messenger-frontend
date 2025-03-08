@@ -6,14 +6,14 @@ import Registration from './pages/Registration';
 
 
 function App() {
-  return (
-        <Router>  
-        <Routes>
-          <Route path="/messenger-frontend/home" element={<Home />} />
-          <Route path="/messenger-frontend/" element={<Registration />} />
-          <Route path="/messenger-frontend/autorization" element={<Autorization />} />
-        </Routes>
-      </Router>
+    return (
+        <Router basename="/messenger-frontend">
+            <Routes>
+                <Route path="/home" element={<Home />} />
+                <Route path="/" element={<Registration />} />
+                <Route path="/autorization" element={<Autorization />} />
+            </Routes>
+        </Router>
     );
 }
 
